@@ -24,11 +24,8 @@
 ;; always end a file with a newline
 ;(setq require-final-newline 'query)
 
-;(load-file "/home/build/public/eng/elisp/google.el")
-;(setq p4-use-p4config-exclusively t)
-
-(setq load-path (cons "/home/boehmeron/.elisp/" load-path))
-(set 'nxml-path "/home/boehmeron/.elisp/nxml/")
+(setq load-path (cons (concat (getenv "HOME") "/.elisp/") load-path))
+(set 'nxml-path (concat (getenv "HOME") "/.elisp/nxml/"))
 
 (load (concat nxml-path "rng-auto.el"))
 
