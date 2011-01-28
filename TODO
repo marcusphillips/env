@@ -1,3 +1,6 @@
 TODO
 
-get global .gitignore working correctly, add an init script to run git config --global core excludes ~/.gitignore etc
+* get global .gitignore working correctly
+* add an init script
+** git config --global core excludes ~/.gitignore etc
+** git config --global name/email

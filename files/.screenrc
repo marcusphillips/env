@@ -7,6 +7,6 @@ shelltitle ''
 
 screen -t python 0 python
 screen -t emacs 1 emacs
-screen -t blaze 2 bash
-screen -t g4 3 bash
-screen -t scratch 4 bash
+screen -t git 2 bash
+screen -t bash 3 bash
+
