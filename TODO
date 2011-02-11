@@ -4,3 +4,8 @@ TODO
 * add an init script
 ** git config --global core excludes ~/.gitignore etc
 ** git config --global name/email
+* s/w to consider auto-installing
+** git
+** emacs
+** pip
+** setuptools
