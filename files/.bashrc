@@ -93,7 +93,7 @@ export EDITOR=emacs
 export P4CONFIG=.p4config
 export P4EDITOR=$EDITOR
 export P4MERGE=/home/build/public/eng/perforce/mergep4.tcl
-#export PS1="\u@\h \[\033[1;32m\]\$(git branch 2> /dev/null | fgrep '*' | sed 's/* //')\[\033[0m\] \[\033[1;33m\]\w\[\033[0m\] $ "
+export PS1="\u@\h \[\033[1;32m\]\$(git branch 2> /dev/null | fgrep '*' | sed 's/* //')\[\033[0m\] \[\033[1;33m\]\w\[\033[0m\] $ "
 
 function bt-sizes(){
     for table in `bt ls /bigtable/$1 | grep slide`;
