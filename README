@@ -1,1 +1,3 @@
-Repo for .bashrc, .screenrc, .emacs, et al
+Repository for .bashrc, .screenrc, .emacs, et al -- a portable environment.
+
+Master plan includes auto-installing various packages. TODO contains the horizon. 
