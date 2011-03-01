@@ -1,5 +1,6 @@
 TODO
 
+* e.g., append .bashrc.local to the repo's .bashrc to generate .bashrc
 * get global .gitignore working correctly
 * add an init script
 ** git config --global core excludes ~/.gitignore etc
