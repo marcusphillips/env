@@ -1,7 +1,10 @@
 TODO
 
 * e.g., append .bashrc.local to the repo's .bashrc to generate .bashrc
-* get global .gitignore working correctly
+* global git config
+** name
+** gitignore
+** auto color
 * add an init script
 ** git config --global core excludes ~/.gitignore etc
 ** git config --global name/email
