@@ -5,6 +5,7 @@ TODO
 ** name
 ** gitignore
 ** auto color
+** aliases (from travis, on xdev3)
 * add an init script
 ** git config --global core excludes ~/.gitignore etc
 ** git config --global name/email
