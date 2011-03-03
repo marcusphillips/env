@@ -1,6 +1,11 @@
 TODO
 
+* .bash_aliases
+* export HISTFILESIZE=1000
+* shopt -s histverify
+* fix up xdev3
 * e.g., append .bashrc.local to the repo's .bashrc to generate .bashrc
+
 * global git config
 ** name
 ** auto color
