@@ -5,7 +5,7 @@ export HISTCONTROL=ignoreboth
 export HISTFILESIZE=10000
 
 export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"'
-export PS1="\u@\h \[\033[1;32m\]\$(git branch 2> /dev/null | fgrep '*' | sed 's/* //')\[\033[0m\] \[\033[1;33m\]\w\[\033[0m\] $ "
+export PS1="\h \[\033[1;32m\]$(git branch 2> /dev/null | fgrep '*' | sed 's/* //')\[\033[0m\] \[\033[1;33m\]\w\[\033[0m\] $ "
 export TERM=rxvt-unicode
 
 export PATH=$PATH:~/bin:~/scripts
