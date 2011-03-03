@@ -32,3 +32,16 @@ fi
 if [ -f .bash_aliases ]; then
 	. .bash_aliases
 fi
+
+keychain ~/.ssh/mygitkey 2> /dev/null
+. ~/.keychain/xdev3-sh
+
+
+cd ~/pg/bt
+source ~/scripts/.git_completion.sh
+cd -
+
+
+BT='/nail/pg/cameron/bt'
+export PATH=$PATH:/nail/home/cameron/bin:/nail/home/cameron/scripts
+export PYTHONSTARTUP=/nail/home/cameron/scripts/bt_init.py
