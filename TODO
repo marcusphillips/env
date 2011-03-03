@@ -3,10 +3,8 @@ TODO
 * e.g., append .bashrc.local to the repo's .bashrc to generate .bashrc
 * global git config
 ** name
-** gitignore
 ** auto color
 ** aliases (from travis, on xdev3)
-* add an init script
 ** git config --global core excludes ~/.gitignore etc
 ** git config --global name/email
 * s/w to consider auto-installing
