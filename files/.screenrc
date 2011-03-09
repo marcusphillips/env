@@ -1,5 +1,6 @@
 escape ^Jj
 termcapinfo xterm-color kD=\E[3~
+term rxvt-unicode
 hardstatus alwayslastline %w
 vbell off
 defscrollback 10000
