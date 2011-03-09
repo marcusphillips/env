@@ -1,0 +1,53 @@
+[alias]
+	# cool log output (visual)
+	lg = log --graph --pretty=format:'%Cred%h%Creset - %Cblue%an%Creset - %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+
+	# what branch we at?
+	here = "!echo $(git symbolic-ref HEAD | sed 's/refs\\/heads\\///g')"
+
+    # batch bring-up-to-date: one server fetch, then the needed merges
+    refresh = "!f() { h=$(git here); git fetch origin $(for c in $@; do echo $c:refs/remotes/origin/$c; done); for c in $@; do git checkout $c; git merge origin/$c; done; git checkout $h; }; f"
+
+    # get the branch dammit - if i don't have it already, bring it down from origin
+    getbranch = "!f() { [ \"$(git branch | grep $1)\" ] && git checkout $1 || git checkout -b $1 --track origin/$1; }; f"
+
+    # create a new branch and set it up to track a new origin branch
+    makebranch = "!f() { b=$(git here); git checkout -b $1; git push origin $1; git checkout $b; git branch -d $1; git getbranch $1; }; f"
+
+    # merge the current branch through each argument branch in order
+    mergechain = "!f() { git refresh $@ && tmp=`mktemp` && git here >$tmp && git pullthis && for b in $@; do prev=`cat $tmp` && git checkout $b && git merge $prev && git pushthis && (git here >$tmp) || break; done; }; f"
+
+
+    # pull and push only the branch i'm on
+    pullthis = "!f() { h=$(git here); git fetch origin $h:refs/remotes/origin/$h && git merge origin/$h; }; f"
+    pushthis = "!f() { git push origin $(git here); }; f"
+
+    # kill my committed but un-pushed local changes by dropping this branch and re-tracking from origin
+    droplocal = "!f() { h=$(git here); d=$([ "$1" ] && echo $1 || echo $h); [ "$h" = "$d" ] && (git branch -D _tmp 2>/dev/null; git checkout -b _tmp); git branch -D $d; git getbranch $d; git branch -D _tmp; git checkout $h; }; f"
+
+
+[push]
+	default = current
+[user]
+	email = boehmeron@google.com
+
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow 
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[core]
+	excludesfile=/nail/home/cameron/.gitignore
